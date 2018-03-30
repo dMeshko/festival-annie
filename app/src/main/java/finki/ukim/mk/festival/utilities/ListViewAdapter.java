@@ -1,6 +1,8 @@
 package finki.ukim.mk.festival.utilities;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import finki.ukim.mk.festival.R;
+import finki.ukim.mk.festival.fragments.ArtistDetailsFragment;
 import finki.ukim.mk.festival.models.Artist;
 
 /**
@@ -62,7 +65,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup viewGroup) {
+    public View getView(final int position, View convertView, ViewGroup viewGroup) {
         Holder holder;
 
         if (convertView == null){
@@ -71,9 +74,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder.layoutImages = (LinearLayout)holder.layout.findViewById(R.id.images);
             holder.layoutText = (LinearLayout)holder.layout.findViewById(R.id.texts);
             holder.leftImage = (ImageView) holder.layoutImages.findViewById(R.id.leftImage);
-            holder.rightImage = (ImageView) holder.layoutImages.findViewById(R.id.rightImage);
             holder.leftText = (TextView) holder.layoutText.findViewById(R.id.leftImageText);
-            holder.rightText = (TextView) holder.layoutText.findViewById(R.id.rightImageText);
             convertView.setTag(holder);
         }
 
@@ -88,7 +89,16 @@ public class ListViewAdapter extends BaseAdapter {
                 .placeholder(R.drawable.featured)
                 .crossFade()
                 .into(holder.leftImage);
-        holder.leftText.setText(artistLeft.getName());
+        holder.leftText.setText(artistLeft.toString());
+
+        holder.leftImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = ctx.getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, ArtistDetailsFragment.newInstance(position), "ArtistDetailsFragment").addToBackStack(null).commit();
+            }
+        });
 
         return convertView;
     }

@@ -10,9 +10,11 @@ public class Artist {
     private Date date;
     private Date createdAt;
     private String imageUrl;
+    private String country;
+    private String stage;
 
     public Artist(){
-
+        createdAt = new Date();
     }
 
     public String getName() {
@@ -61,5 +63,30 @@ public class Artist {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getStage() {
+        return stage;
+    }
+
+    public void setStage(String stage) {
+        this.stage = stage;
+    }
+
+    public void addLink(String link){
+        links.add(link);
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + country + ")";
     }
 }
