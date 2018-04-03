@@ -1,9 +1,12 @@
 package finki.ukim.mk.festival.models;
 
+
+import android.support.annotation.NonNull;
+
 import java.util.Date;
 import java.util.List;
 
-public class Artist {
+public class Artist implements Comparable<Artist>{
     private String name;
     private String biography;
     private List<String> links;
@@ -12,6 +15,7 @@ public class Artist {
     private String imageUrl;
     private String country;
     private String stage;
+    private Location location;
 
     public Artist(){
         createdAt = new Date();
@@ -85,8 +89,21 @@ public class Artist {
         links.add(link);
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         return name + " (" + country + ")";
+    }
+
+    @Override
+    public int compareTo(@NonNull Artist artist) {
+        return name.compareTo(artist.getName());
     }
 }

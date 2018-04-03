@@ -5,21 +5,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_najnovo"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Најново" />
+        <item
+            android:id="@+id/nav_artisti"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Артисти" />
+        <item
+            android:id="@+id/nav_ploshtart"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Плоштарт" />
+        <item
+            android:id="@+id/nav_makedoks"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Македокс" />
+        <item
+            android:id="@+id/nav_raspored"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Распоред" />
+        <item
+            android:id="@+id/nav_novosti"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Новости" />
+        <item
+            android:id="@+id/nav_mapa"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Мапа" />
     </group>
 
     <item android:title="Communicate">

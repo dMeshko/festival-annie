@@ -1,5 +1,7 @@
 package finki.ukim.mk.festival;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,9 +21,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import finki.ukim.mk.festival.fragments.ArtistScheduleFragment;
+import finki.ukim.mk.festival.fragments.ArtistsFragment;
+import finki.ukim.mk.festival.fragments.MapFragment;
+import finki.ukim.mk.festival.fragments.ScheduleFragment;
 import finki.ukim.mk.festival.models.Artist;
+import finki.ukim.mk.festival.models.Location;
 import finki.ukim.mk.festival.utilities.ListViewAdapter;
 
 public class MainActivity extends AppCompatActivity
@@ -39,6 +48,13 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("Палиндром е скопско трио формирано во 2013та година. Невообичаениот состав на две бас гитари и тапани дозволува голем простор за експериментирање околу пост-панк/стонер и ноиз жанровите. Бендот го сочинуваат Кристијан Новковски (тапани), Ерик Омерагиќ (бас) и Филип Поповски (бас).");
         artist.setCountry("MK");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/Palindrom1.jpg");
+        artist.setLocation(new Location("Vlez1", "41.189184", "22.719676"));
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -46,6 +62,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("Младиот скопски бенд CONSPIRACY како актуелен победник на ЛУЗЕР ФЕСТ овој јули ќе настапи на Mosquito Stage на Д Фестивал. Conspiracy во денешниот состав постои од 2016-та година, а станува збор за вистински вљубеници се во треш метал звукот, кои со својата музика сакаат да придонесат за враќањето на овој музички правец на нашата македонска сцена. Иако постојат само две години, Conspiracy дефинитивно не ја чуваат својата музика само за во гаража и се трудат што е можно повеќе својата работа да ја претстават пред публиката, па покрај настапот на ланскиот Лузер Фест, зад себе веќе имаат и десетина настапи на различни музички манифестации и во скопските клубови. Членови на Conspiracy се: Стефан Трајкоски (вокал, ритам гитара), Давор Капац (соло гитара), Иван Димишков (тапани) и Милош Благоевиќ (бас гитара).");
         artist.setCountry("MK");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/Conspiracy1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -53,6 +75,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("Оваа низа овој јули продолжува со потврдениот настап на светскиот музички феномен, лондонското трио DISCIPLES кое директно од светските денс топ листи ќе ги донесе своите бројни хитови на главната бина на Д ФЕСТИВАЛ. Лондонското трио Disciples „експлодира“ на светската сцена со хитот „How Deep Is Your Love“ изработен во соработка со славниот Келвин Харис. По синглот кој во моментов надминува милијарда прегледувања на „ЈуТјуб“, ги препозна и поддржа и легендарниот Пит Тонг од Би-Би-Си, по што со молскавична брзина се пробија на највисоките позиции на сите релевантни светски топ листи. Членовите на триото Дувал, Лук Мак и Гавин Кол самите ја пишуваат, пејат и продуцираат својата музика, а истакнато место на листите им оствари еден од најслушаните синглови во 2017-та, „On My Mind“!");
         artist.setCountry("UK");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/Disciples1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -69,6 +97,12 @@ public class MainActivity extends AppCompatActivity
                 "Во албумот „Resurgam“ ништо не е зацврстено, додека можностите даваат ослободувачко чувство. 10-те песни од албумот се снимени во период од два месеци, релативно луксузно долг период на време за Финк. Експресијата на Финк носи мелодија која останува со тебе, дури и откако последната нота ќе замре. На „Resurgam“ таа енергија постојано расне, туркајќи ги нешатата нанапред.");
         artist.setCountry("UK");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/Fink1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -76,6 +110,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("Дуке Бојаџиев е Македонски композитор кој од 2001 година живее и работи во ЊуЈорк. Тој има дипломирано на Медицинскиот Факултет во Скопје, а потоа на музичкиот колеџ Беркли во Бостон. Низ неговата интернационална кариера Дуке има работено со добитници на Оскар како Џонатан Деми и Данис Танович, како и со Рајко Грлич, Вељко Булајич и Столе Попов. Неговата музика е користена за светски кампањи на брендови како Пежо, Ланком и Лореал, разни светски компилации како Буда Бар и Маракеш Експрес. Има работено со артисти како Синди Лопер и Телепоп Мјузик, а има настапувано во светски дворани, меѓу кои Карнеги Хол во Њу Јорк, Авалон Театар во Лос Анџелес и Античкиот Театар во Охрид.");
         artist.setCountry("MK/USA");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/DukeB1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2011);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -83,6 +123,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("Горан Трајкоски е македонски композитор на театарска и филмска музика, инструменталист, вокален интерпретатор, основач на рок групите Падот на Византија и Анастасија. Бил соработник на неколку дискографски изданија и настапувал со групи и музичари како Мизар, Кирил Џајковски, Елена Христова, Александар Велјанов, Deine Lakaien и Mooger Fooger. Студирал англиски јазик и книжевност , но музички сам се образувал учејќи ја традиционалната македонска музика од Пеце Атанасовски, македонското и традиционалното источно црковно пеење од oтец Стефан Санџаковски. Својата прва музика за театарска претстава ја направил во 1989 година, а до денес работел музика за повеќе од 80тина театарски претстави и филмови.");
         artist.setCountry("MK");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/Gotra1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -96,6 +142,12 @@ public class MainActivity extends AppCompatActivity
                 "Who See лани учествуваа и во интернационалниот проект Tuborg Open во која прилика соработуваа со реномираната светска атракција Major Lazer, а ова лето на 6-ти јули тие за прв пат ќе настапат во Македонија и тоа на главната бина на Д ФЕСТИВАЛ во Дојран.");
         artist.setCountry("ME");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/WhoSee1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -103,6 +155,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("На 8-ми јули Д Фестивал ќе биде домаќин и на основачката на Pussy Riot, руската новинарка, активистка и уметница Марија Аљохина! Добитничката на наградите The Hannah Arendt и The LennonOno Grant for Peace, ќе ни го претстави нејзиниот музички и театарски проект „Riot Days by Pussy Riot Theatre“ подготвен врз основа на нејзината последна книга Riot Days. На главната бина на Фестивалот ќе го погледнеме перформансот за активизмот, политичкиот отпор, злоупотребата на моќта, нечовечните услови во затворите, но и за надежта за подобро општество. Не треба многу да се објаснува кои се Pussy Riot, рускиот арт колектив веќе глобално важи за еден од најзначајните активистички гласови во последните 10 години, а членовите на Pussy Riot со нивното бескомпромисно и упорно залагање за човековите права и слободи, секако го заслужуваат своето место и внимание на фестивалите од калибарот на Д ФЕСТИВАЛ кои промовирајќи го фестивалскиот дух и акцентирајќи ги позитивните вредности претставуваат многу повеќе од само одлична музичка програма. Спојувајќи ги театарот, филмот и музиката, овој активистички проект на Марија Аљохина ја раскажува сторијата на дисидентската панк група затворена во Русија поради критикување на власта. „Слободата не постои доколку секојдневно не се борите за неа,“ – вели Аљохина. Нам пак, особено ни е драго дека покрај концертот, нивниот перформанс ќе го отвори и размислувањето за улогата на слободната уметност и нејзиниот однос со политиката.");
         artist.setCountry("RU");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/PussyRiot1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
         artist = new Artist();
@@ -110,6 +168,12 @@ public class MainActivity extends AppCompatActivity
         artist.setBiography("KOALA VOICE се четири клинци од најиндустрискиот дел во Словенија. Со нивното свежо комбинирање на инди музиката со рок и поп звукот од ’70-тите, ги освоија срцата и гласовите на словенечкиот натпревар на средношколските бендови во 2014 година. Иако тогаш сѐ уште беа средношколци, работите се развиваа многу брзо за младиот бенд и продолжуваат со истото темпо, со договори за издавање, многу концерти и фестивалски настапи како оние на EXIT, Eurosonic, Tallinn Music Week, Wild Mint во Русија, Reeperbahn, Waves Vienna, Waves Bratislava и други низ Европа, а меѓу кои и ТАКСИРАТ фестивалот во 2016-та каде што KOALA VOICE го имаа убедливо најпосетениот настап на скопската PIN Music Conference таа година.  Во моментов бендот е актуелен со својот нов, втор и самостојно објавен, албум Wolkenfabrik чиј материјал ќе ни го претстават на сцена, онаму каде што всушност се најдобри.");
         artist.setCountry("SI");
         artist.setImageUrl("http://dfestival.mk/wp-content/uploads/2018/03/KoalaVoice1.jpg");
+        cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2012);
+        cal.add(Calendar.DAY_OF_MONTH, 5);
+        artist.setDate(cal.getTime());
         artists.add(artist);
 
     }
@@ -137,6 +201,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setContentView(R.layout.view_schedule_fragment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -189,20 +254,42 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Class fragmentClass = null;
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_najnovo) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_artisti) {
+            fragmentClass = ArtistsFragment.class;
+        } else if (id == R.id.nav_ploshtart) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_makedoks) {
 
+        } else if (id == R.id.nav_raspored) {
+//            fragmentClass = ArtistScheduleFragment.class;
+            fragmentClass = ScheduleFragment.class;
+        } else if (id == R.id.nav_novosti) {
+
+        } else if (id == R.id.nav_mapa) {
+            fragmentClass = MapFragment.class;
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
+
+        FragmentManager fragmentManager = getFragmentManager();
+        Fragment fragment = null;
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (fragment == null)
+            return false;
+
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
