@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Festival</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="mainStageLan">41.1915878</string>
+    <string name="mainStageLon">22.7151323</string>
+
+    <string name="churchStageLan">41.1882048</string>
+    <string name="churchStageLon">22.7182973</string>
+
+    <string name="mosquitoStageLan">41.188038</string>
+    <string name="mosquitoStageLon">22.720816</string>
+
+    <string name="lakeAwayStageLan">41.187504</string>
+    <string name="lakeAwayStageLon">22.722045</string>
+
+    <string name="campLan">41.1881987</string>
+    <string name="campLon">22.7206553</string>
+
+    <string name="biletaraLan">41.187174</string>
+    <string name="biletaraLon">22.721042</string>
+
+    <string name="vlezGorenLan">41.189290</string>
+    <string name="vlezGorenLon">22.719518</string>
+
+    <string name="vlezSredenLan">41.188334</string>
+    <string name="vlezSredenLon">22.720335</string>
+
+    <string name="vlezDolenLan">41.187448</string>
+    <string name="vlezDolenLon">22.721494</string>
+
+    <string name="hranaLan">41.188195</string>
+    <string name="hranaLon">22.721057</string>
+
+    <string name="bravoLan">41.187448</string>
+    <string name="bravoLon">22.721494</string>
+
+    <string name="ploshtartLan">41.188262</string>
+    <string name="ploshtartLon">22.720589</string>
+
+
+</resources>
